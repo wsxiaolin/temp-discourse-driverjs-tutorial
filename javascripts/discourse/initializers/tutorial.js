@@ -93,7 +93,9 @@ async function showTutorial(steps) {
       saveStatus();
     },
     onHighlighted: (element,step, options) => {
+      options.state.activeStep.popover.showButtons = ['next', 'previous', 'done'];
       console.log(options)
+      
     }
   };
   console.log(driverConfig);
