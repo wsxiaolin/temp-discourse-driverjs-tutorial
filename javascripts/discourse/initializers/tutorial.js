@@ -81,7 +81,7 @@ async function showTutorial(steps) {
   const driverConfig = {
     overlayColor: 'rgba(31, 31, 34, 0.73)',
     
-    allowClose: false,
+    //allowClose: false,
     allowKeyboardControl: true,
     steps: newsteps,
     onCloseClick: () => {
