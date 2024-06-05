@@ -81,7 +81,11 @@ async function showTutorial(steps) {
   const driverConfig = {
     overlayColor: 'rgba(31, 31, 34, 0.73)',
     
-    //allowClose: false,
+    doneBtnText: locale("done"),
+    showProgress: true,
+    nextBtnText: locale("next"),
+    prevBtnText: locale("prev"),
+    allowClose: false,
     allowKeyboardControl: true,
     steps: newsteps,
     onCloseClick: () => {
@@ -120,6 +124,10 @@ export default apiInitializer("1.13.0", (api) => {
   
   api.onPageChange((url) => {
     loadTutorial(api);
+    //Close the toturial
+    document.getElementsByClassName("driver-popover-close-btn")[0].addEventListener(()=>{
+      window.myDriver.destroy()
+    })
   });
   
 })
