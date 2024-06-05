@@ -80,11 +80,7 @@ async function showTutorial(steps) {
   // Show the tutorial
   const driverConfig = {
     overlayColor: 'rgba(31, 31, 34, 0.73)',
-    doneBtnText: locale("done"),
-    showProgress: true,
-    nextBtnText: locale("next"),
-    prevBtnText: locale("prev"),
-    showButtons: ['next','previous','close'],
+    
     allowClose: false,
     allowKeyboardControl: true,
     steps: newsteps,
@@ -94,7 +90,6 @@ async function showTutorial(steps) {
     },
     onHighlighted: (element,step, options) => {
       console.log(options)
-      document.querySelector("body > div.driver-popover > div.driver-popover-footer > span.driver-popover-navigation-btns").innerHTML += '<button class="close">关闭</button>'
     }
   };
   console.log(driverConfig);
