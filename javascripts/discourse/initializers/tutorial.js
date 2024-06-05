@@ -93,7 +93,7 @@ async function showTutorial(steps) {
       saveStatus();
     },
     onHighlighted: (element,step, options) => {
-      document.querySelector("body > div.driver-popover > div.driver-popover-footer > span.driver-popover-navigation-btns").innerHTML += '<button class="close">关闭</button>'
+      document.querySelector(".driver-popover-navigation-btns").innerHTML += '<button class="close">关闭</button>'
 
       closeBtn.addEventListener("click", () => {
         window.myDriver.destroy();
