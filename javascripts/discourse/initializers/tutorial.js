@@ -85,7 +85,7 @@ async function showTutorial(steps) {
     showProgress: true,
     nextBtnText: locale("next"),
     prevBtnText: locale("prev"),
-    //allowClose: false,
+    allowClose: false,
     allowKeyboardControl: true,
     steps: newsteps,
     onCloseClick: () => {
@@ -93,14 +93,18 @@ async function showTutorial(steps) {
       saveStatus();
     },
     onHighlighted: (element,step, options) => {
-      options.state.activeStep.popover.showButtons = ['next', 'previous', 'done'];
-      console.log(options)
+      document.querySelector("body > div.driver-popover > div.driver-popover-footer > span.driver-popover-navigation-btns").innerHTML += '<button class="close">关闭</button>'
+
+      closeBtn.addEventListener("click", () => {
+        window.myDriver.destroy();
+      });
       
     }
   };
   console.log(driverConfig);
   window.myDriver = driver(driverConfig)
   window.myDriver.drive();
+  
 }
 
 // Tutorial statuses
@@ -126,10 +130,7 @@ export default apiInitializer("1.13.0", (api) => {
   
   api.onPageChange((url) => {
     loadTutorial(api);
-    //Close the toturial
-    document.getElementsByClassName("driver-popover-close-btn")[0].addEventListener(()=>{
-      window.myDriver.destroy()
-    })
+    
   });
   
 })
