@@ -85,7 +85,7 @@ async function showTutorial(steps) {
     showProgress: true,
     nextBtnText: locale("next"),
     prevBtnText: locale("prev"),
-    allowClose: false,
+    //allowClose: false,
     allowKeyboardControl: true,
     steps: newsteps,
     onCloseClick: () => {
