@@ -97,7 +97,7 @@ async function showTutorial(steps) {
       function _createCloseButton(){
         const popoverContent = document.getElementById('driver-popover-content');
         const closeButton = document.createElement('button');
-        closeButton.textContent = '×';
+        closeButton.textContent = '╳';
         closeButton.classList.add('driver-custom-popover-close-btn');
         popoverContent.appendChild(closeButton);
         closeButton.addEventListener("click", () => {
