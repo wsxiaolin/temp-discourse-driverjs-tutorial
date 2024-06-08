@@ -93,11 +93,19 @@ async function showTutorial(steps) {
       saveStatus();
     },
     onHighlighted: (element,step, options) => {
-      document.querySelector(".driver-popover-navigation-btns").innerHTML += '<button class="close">关闭</button>'
-
-      document.querySelector(".close").addEventListener("click", () => {
-        window.myDriver.destroy();
-      });
+      
+      function _createCloseButton(){
+        const popoverContent = document.getElementById('driver-popover-content');
+        const closeButton = document.createElement('button');
+        closeButton.textContent = '×';
+        closeButton.classList.add('driver-custom-popover-close-btn');
+        popoverContent.appendChild(closeButton);
+        closeButton.addEventListener("click", () => {
+          window.myDriver.destroy();
+        });
+      }
+      
+      myDriver.hasNextStep() && _createCloseButton
       
     }
   };
