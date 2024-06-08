@@ -105,7 +105,7 @@ async function showTutorial(steps) {
         });
       }
       
-      myDriver.hasNextStep() && _createCloseButton
+      myDriver.hasNextStep() && _createCloseButton()
       
     }
   };
