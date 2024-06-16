@@ -1,7 +1,6 @@
-zh-CN:
-   done: 完成
-    next: 下一步
-    prev: 上一步
-    msg: 
-     a: 1
-     b: 2
+parent_key:
+  child_key1: value1
+  child_key2: value2
+  child_key3:
+    grandchild_key1: value3
+    grandchild_key2: value4
