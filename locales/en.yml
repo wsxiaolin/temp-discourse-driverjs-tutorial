@@ -1,4 +1,7 @@
-en:
-  done: Done
-  next: Next
-  prev: Previous
+zh-CN:
+   done: 完成
+    next: 下一步
+    prev: 上一步
+    msg: 
+     a: 1
+     b: 2
