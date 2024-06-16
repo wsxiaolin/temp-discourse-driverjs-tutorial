@@ -1,9 +1,18 @@
 en:
   tutorials:
     logged_startpage:
-      - title: 消息区介绍
+      message_area_intro:
+        title: 消息区介绍
         description: 点击右上角个人头像可以弹出消息界面
-      - title: 消息区介绍
+      browse_messages:
+        title: 消息区介绍
         description: 在这里，您可以浏览所有与您有关的消息，点击右侧交互按钮查看对应类别的内容
-      - title: 消息区介绍
+      user_center:
+        title: 消息区介绍
         description: 点击这里跳转到用户中心，查看更多内容
+
+    summary:
+      customization:
+        title: 个性化设置
+        description: 论坛提供了丰富的可自定义功能，点击选项卡以查看不同功能。如果有任何问题，欢迎搜索或者联系我们<a href='/about'>友好的管理人员</a>
+
