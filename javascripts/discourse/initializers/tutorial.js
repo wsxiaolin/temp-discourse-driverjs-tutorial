@@ -40,11 +40,8 @@ async function loadTutorial(api) {
   }
   if (Tutorial === undefined) return;
   // Check if the tutorial was closed within the last 30 minutes
-	const thirtyMinutesAgo = new Date().getTime() - (30 * 60 * 1000);
-	if (status.ClosedAt[Tutorial] !== undefined && status.ClosedAt[Tutorial] > thirtyMinutesAgo) {
-  	console.log(`Tutorial ${Tutorial} was closed within the last 30 minutes and will not be shown.`);
-  	return;
-	}
+  const thirtyMinutesAgo = new Date().getTime() - (30 * 60 * 1000);
+  if (status.ClosedAt[Tutorial] !== undefined && status.ClosedAt[Tutorial] > thirtyMinutesAgo) return;
   console.log("Preparing for the tutorial: " + Tutorial);
   if (status.Showed[Tutorial] !== undefined) return;
   console.log("Showing the tutorial: " + Tutorial);
@@ -97,10 +94,8 @@ async function showTutorial(steps) {
     steps: newsteps,
 
     onCloseClick: () => {
-    // Check if the tutorial has been closed twice
-  	if (status.ClosedAt[Tutorial] !== undefined) {
-    	status.Cancelled++; 
-  	}
+      // Check if the tutorial has been closed twice
+      if (status.ClosedAt[Tutorial] !== undefined)status.Cancelled++;
       status.ClosedAt[Tutorial] = new Date().getTime(); // Record close timestamp
       saveStatus();
     },
