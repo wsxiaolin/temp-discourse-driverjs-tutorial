@@ -110,7 +110,7 @@ async function showTutorial(steps) {
         closeButton.addEventListener("click", () => { Driver.destroy(); });
       }
 
-      myDriver.hasNextStep() && _createCloseButton()
+      Driver.hasNextStep() && _createCloseButton()
     }
   };
 
