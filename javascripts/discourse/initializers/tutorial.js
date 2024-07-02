@@ -115,7 +115,7 @@ async function showTutorial(steps) {
   };
 
   console.log(driverConfig);
-  var Driver = driver(driverConfig);
+  var Driver = driver.js.driver(driverConfig);
   Driver.drive();
 }
 
@@ -144,3 +144,4 @@ export default apiInitializer("1.13.0", (api) => {
     loadTutorial(api);
   });
 })
+
